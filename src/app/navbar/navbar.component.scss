@@ -2,5 +2,12 @@
     flex: 1 1 auto;
   }
   a:hover{
-    color:red
+    color:rgb(0, 0, 0)
+  }
+  a:active{
+    color: #000;
+  }
+  .custom-toolbar {
+    background-color: #2285ff;
+    color: white; /* Matn rangi */
   }

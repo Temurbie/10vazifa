@@ -5,6 +5,10 @@ import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
+// import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { PopUpComponent } from '../pop-up/pop-up.component';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
@@ -19,6 +23,8 @@ import {MatCardModule} from '@angular/material/card';
         FormsModule,
         MatCheckboxModule,
         MatSliderModule,
+        // MatDialogModule,
+        RouterLink
     ]
 })
 export class HomeComponent {
@@ -26,8 +32,11 @@ export class HomeComponent {
     max = 100;
     min = 0;
     showTicks = false;
-    step = 1;
+    step = 10;
     thumbLabel = false;
     value = 0;
+
+    
+
 
 }

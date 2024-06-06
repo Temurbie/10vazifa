@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row mt-3">
+       <div class="col-3" *ngFor="let product of products">
+        <div class="card mb-3 text-center p-3">
+            <div class="card-body">
+                <h5 class="card-title">{{product.maxsulot}}</h5>
+                <p class="card-text"> Narx: {{product.narx}}</p>
+                <a [routerLink]="['products-detail/:', product.id]" class="btn btn-primary">Id olish</a>
+            </div>
+            <div class="card-footer">
+                <p>salom</p>
+            </div>
+           </div>
+       </div>
+    </div>
+</div>
