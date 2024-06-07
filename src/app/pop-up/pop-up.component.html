@@ -1,5 +1,186 @@
+
+
 <div class="container" >
-    <section class="vh-100" style="background-color: #eee;">
+  <div class="btn text-center" style="width: 100%;">
+    <button (click)="openModal()" class="btn btn-primary">
+      Reactive Form
+    </button>
+    <div id="myModal" class="modal" role="dialog">
+      <div class="modal-dialog">
+    
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title text-start">Reactive Form</h4>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="profileGroup" (ngSubmit)="onSubmit()">
+              =={{ profileGroup.controls.fName.errors | json }}==
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-6">
+                    <input type="text" class="form-control" name="" placeholder="First Name" formControlName="fName"
+                    [class.error]="profileGroup.controls.fName.invalid && (profileGroup.controls.fName.touched || profileGroup.controls.fName.dirty)"
+                    [class.correct]="profileGroup.controls.fName.valid">
+                    @if (profileGroup.controls.fName.invalid && (profileGroup.controls.fName.touched || profileGroup.controls.fName.dirty)){
+                      @if(profileGroup.controls.fName.errors?.["required"]){
+                        <small class="ala">*Bush bulmasligi kerak</small>
+                      }
+                      @if(profileGroup.controls.fName.errors?.["minlength"]){
+                        <small class="ala">*Belgi kamita 5 ta bulsin</small>
+                      }
+                      @if(profileGroup.controls.fName.errors?.["maxlength"]){
+                        <small class="ala">*Belgi  8 tadan kam bulsin</small>
+                      }
+                    }
+                  </div>
+                  <div class="col-6">
+                    <input type="text" placeholder="Last Name" class="form-control" formControlName="lName"
+                    [class.error]="profileGroup.controls.lName.invalid && (profileGroup.controls.lName.touched || profileGroup.controls.lName.dirty)"
+                    [class.correct]="profileGroup.controls.lName.valid">
+                    @if(profileGroup.controls.lName.invalid && (profileGroup.controls.lName.touched || profileGroup.controls.lName.dirty)){
+                      @if(profileGroup.controls.lName.errors?.["required"]){
+                        <small class="ala">*Bush bulmasligi kerak</small>
+                      }
+                      @if(profileGroup.controls.lName.errors?.["minlength"]){
+                        <small class="ala">*Belgi kamita 5 ta bulsin</small>
+                      }
+                      @if(profileGroup.controls.lName.errors?.["maxlength"]){
+                        <small class="ala">*Belgi  8 tadan kam bulsin</small>
+                      }
+                    }
+                  </div>
+                </div>
+              </div>
+              <div class="form-group pt-3">
+                <div class="row">
+                  <div class="col-12">
+                    <input type="text" placeholder="Company" class="form-control" formControlName="company"
+                    [class.error]="profileGroup.controls.company.invalid && (profileGroup.controls.company.touched || profileGroup.controls.company.dirty)"
+                    [class.correct]="profileGroup.controls.company.valid">
+                    @if(profileGroup.controls.company.invalid && (profileGroup.controls.company.touched || profileGroup.controls.company.dirty)){
+                      @if(profileGroup.controls.company.errors?.["required"]){
+                        <small class="ala">*Bush bulmasligi kerak</small>
+                      }
+                      @if(profileGroup.controls.company.errors?.["minlength"]){
+                        <small class="ala">*Belgi kamita 8 ta bulsin</small>
+                      }
+                      @if(profileGroup.controls.company.errors?.["maxlength"]){
+                        <small class="ala">*Belgi  10 tadan kam bulsin</small>
+                      }
+                    }
+                  </div>
+                </div>
+              </div>
+              <div class="form-group pt-3">
+                <div class="row">
+                  <div class="col-12">
+                    <input type="email" placeholder="Email" class="form-control" formControlName="email"
+                    [class.error]="profileGroup.controls.email.invalid && (profileGroup.controls.email.touched || profileGroup.controls.email.dirty)"
+                    [class.correct]="profileGroup.controls.email.valid">
+                    @if(profileGroup.controls.email.invalid && (profileGroup.controls.email.touched || profileGroup.controls.email.dirty)){
+                      @if(profileGroup.controls.email.errors?.["required"]){
+                        <small class="ala">*Bush bulmasligi kerak</small>
+                      }
+                      @if(profileGroup.controls.email.errors?.["email"]){
+                        <small class="ala">Email Belgisi Quyilsin</small>
+                      }
+                      
+                    }
+                  </div>
+                </div>
+              </div>
+              <div class="form-group pt-">
+                <div class="row">
+                  <div class="col-5">
+                    <input type="text" class="form-control" placeholder="Code Area" formControlName="code"
+                    [class.error]="profileGroup.controls.code.invalid && (profileGroup.controls.code.touched || profileGroup.controls.code.dirty)"
+                    [class.correct]="profileGroup.controls.code.valid">
+                    @if(profileGroup.controls.code.invalid && (profileGroup.controls.code.touched || profileGroup.controls.code.dirty)){
+                      @if(profileGroup.controls.code.errors?.["required"]){
+                        <small class="ala">*Bush bulmasin</small>
+                      }
+                      @if(profileGroup.controls.code.errors?.["minlength"]){
+                        <small class="ala">1 Ta belgidan kam Bulmasligi kere</small>
+                      }
+                      @if(profileGroup.controls.code.errors?.["maxlength"]){
+                        <small class="ala">3 Ta belgidan ko'p Bulmasligi kere</small>
+                      }
+                      
+                    }
+                  </div>
+                  <div class="col-7">
+                    <input type="text" placeholder="Number" class="form-control" formControlName="phone"
+                    [class.error]="profileGroup.controls.phone.invalid && (profileGroup.controls.phone.touched || profileGroup.controls.phone.dirty)"
+                    [class.correct]="profileGroup.controls.phone.valid">
+                    @if(profileGroup.controls.phone.invalid && (profileGroup.controls.phone.touched || profileGroup.controls.phone.dirty)){
+                      @if(profileGroup.controls.phone.errors?.["required"]){
+                        <small class="ala">*Bush bulmasligi kerak</small>
+                      }
+                      @if(profileGroup.controls.phone.errors?.["minlength"]){
+                        <small class="ala">1 Ta belgidan kam Bulmasligi kere</small>
+                      }
+                      @if(profileGroup.controls.phone.errors?.["maxlength"]){
+                        <small class="ala">3 Ta belgidan ko'p Bulmasligi kere</small>
+                      }
+                      
+                    }
+                  </div>
+                </div>
+              </div>
+              <div class="form-group pt-3">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Subject</label>
+                      </div>
+                      <select class="custom-select form-control" id="inputGroupSelect01" formControlName="sub"
+                      [class.error]="profileGroup.controls.sub.invalid && (profileGroup.controls.sub.touched || profileGroup.controls.sub.dirty)"
+                      [class.correct]="profileGroup.controls.sub.valid">
+                        <option disabled selected>Subject</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                      @if(profileGroup.controls.sub.invalid && (profileGroup.controls.sub.touched || profileGroup.controls.sub.dirty)){
+                        @if(profileGroup.controls.sub.errors?.["required"]){
+                          <small class="ala">*Bush bulmasligi kerak</small>
+                        }
+                      }
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group pt-3 text-start">
+                <p>Are you an ecxting custommer?</p>
+                <input type="radio" class="" id="chkbox" name="radio" 
+                  [class.error]="profileGroup.controls.radio.invalid && (profileGroup.controls.radio.touched || profileGroup.controls.radio.dirty)"
+                  [class.correct]="profileGroup.controls.radio.valid">No
+                <input type="radio" class="" id="chkbox" name="radio" 
+                  [class.error]="profileGroup.controls.radio.invalid && (profileGroup.controls.radio.touched || profileGroup.controls.radio.dirty)"
+                  [class.correct]="profileGroup.controls.radio.valid"> Yes
+                  @if(profileGroup.controls.radio.invalid && (profileGroup.controls.radio.touched || profileGroup.controls.radio.dirty)){
+                    @if(profileGroup.controls.radio.errors?.["required"]){
+                      <small class="ala">*Tanlang</small>
+                    }
+                  }
+              </div>
+              <div class="row p-3">
+                <div class="col-12 text-end">
+                  <button type="submit"  class="btn btn-outline-primary me-2" data-dismiss="modal">Submit</button>
+                  <button type="button" class="btn btn-outline-danger" (click)="closeModal()" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+    
+      </div>
+    </div>
+  </div>
+    <!-- <section class="vh-100" style="background-color: #eee;">
         <div class="container h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-lg-12 col-xl-11">
@@ -72,7 +253,7 @@
                         </div>
       
                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                          <button type="submit" [disabled]="userLogin.invalid" class="btn btn-primary btn-lg">Register</button>
+                          <button type="submit" disabled="userLogin.invalid" class="btn btn-primary btn-lg">Register</button>
                         </div>
                       </form>
       
@@ -85,4 +266,4 @@
           </div>
         </div>
       </section>
-</div>
+</div> -->

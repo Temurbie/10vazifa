@@ -3,3 +3,36 @@
     height: 100%;
     background-color: white;
 }
+.ala{
+    position: relative;
+    padding: 4px 10px;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    background-color: rgb(224, 165, 165);
+    color: #fff;
+    margin-top: 3px;
+}
+.error{
+    border: 2px solid red;
+    animation: error 0.5s;
+}
+.correct{
+    border: 2px solid rgb(6, 237, 29);
+    animation: correct 0.5s ease-in-out;
+    position: relative;
+}
+@keyframes correct {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-5px); }
+    50% { transform: translateY(5px); }
+    75% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+ }
+@keyframes error {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+
