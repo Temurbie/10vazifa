@@ -1,24 +1,35 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, ElementRef, ViewChild, viewChild } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
+import { HomeComponent } from "../home/home.component";
 
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [
-    RouterLink,
-    MatToolbarModule,
-    MatIconModule, 
-    MatButtonModule,
-    MatSidenavModule
-  ],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+    selector: 'app-navbar',
+    standalone: true,
+    templateUrl: './navbar.component.html',
+    styleUrl: './navbar.component.scss',
+    imports: [
+        RouterLink,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatSidenavModule,
+        HomeComponent,
+        RouterOutlet
+    ]
 })
 export class NavbarComponent {
+    @ViewChild('sidenav') sidenav!: MatSidenav;
 
+    onOpen() {
+    this.sidenav.toggle();
+  }
+
+  onClose() {
+    this.sidenav.close();
+  }
 }

@@ -1,19 +1,23 @@
-<mat-toolbar  class="custom-toolbar">
-    <button mat-icon-button>
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>My App</span>
-    <a routerLink="/" class="p-4 navbar-brand">Home</a>
-    <a routerLink="/about" class="p-4 navbar-brand">About</a>
-    <a routerLink="/contact" class="p-4 navbar-brand">Contact</a>
-    <a routerLink="/products" class="p-4 navbar-brand">Products</a>
-    <a routerLink="/grid" class="p-4 navbar-brand">Thema Grid</a>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
-  </mat-toolbar>
+<mat-toolbar class="mat-toolbar">
+  <button mat-icon-button class="mat-button" (click)="onOpen()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container >
+  <mat-sidenav #sidenav class="sidenav">
+    <div class="links">
+    <a routerLink="/home">Home</a>
+    <a routerLink="/contact">Contact</a>
+    <a routerLink="/about">About</a>
+    <a routerLink="/grid">Grid</a>
+    <a routerLink="/products">Products</a>
+    <a routerLink="/popup">Popup</a>
+    <a routerLink="/table">Table</a>
+
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
  

@@ -1,13 +1,33 @@
-.example-spacer {
-    flex: 1 1 auto;
-  }
-  a:hover{
-    color:rgb(0, 0, 0)
-  }
-  a:active{
+.mat-toolbar{
+  background-color: #2775f1;
+  box-shadow: -1px 3px 5px 0px rgba(130, 129, 129, 0.75);
+}
+.mat-button{
+  color: #000;
+}
+mat-sidenav-container{
+  height: calc(100vh - 64px);
+  background-color: #fff;
+}
+.sidenav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+
+  a{
+    display: block;
     color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    &:hover{
+      color: #2775f1;
+    }
   }
-  .custom-toolbar {
-    background-color: #2285ff;
-    color: white; /* Matn rangi */
+  .links{
+    margin-top: 75px;
   }
+}

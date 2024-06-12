@@ -7,6 +7,8 @@ import { ProductsComponent } from './products/products.component';
 import { ProductsDetailComponent } from './products-detail/products-detail.component';
 import { GirdComponent } from './gird/gird.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
+import { TableComponent } from './table/table.component';
+
 
 export const routes: Routes = [
     {'path': '', redirectTo:'/home', pathMatch: "full"},
@@ -17,5 +19,6 @@ export const routes: Routes = [
     {'path': 'products-detail/:id', component: ProductsDetailComponent },
     {'path': 'grid', component:GirdComponent},
     {'path': 'popup', component:PopUpComponent},
+    {'path': 'table', component:TableComponent},
     {'path': "**", component:PageNotFoundComponent},
 ];

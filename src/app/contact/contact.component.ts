@@ -1,4 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbar } from '@angular/material/toolbar';
+import { RouterOutlet } from '@angular/router';
 
 
 @Component({
@@ -6,7 +12,14 @@ import { Component } from '@angular/core';
     standalone: true,
     templateUrl: './contact.component.html',
     styleUrl: './contact.component.scss',
-    imports: []
+    imports: [
+        CommonModule,
+        RouterOutlet,
+        MatToolbar,
+        MatIconModule,
+        MatButtonModule,
+        MatSidenavModule
+    ]
 })
 export class ContactComponent {
 
